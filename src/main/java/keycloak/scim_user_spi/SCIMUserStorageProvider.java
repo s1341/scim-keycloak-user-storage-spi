@@ -256,7 +256,7 @@ ImportedUserValidation
 			logger.info("User found by username!");
             //logger.info("localUserStorage: {0}", ((LegacyDatastoreProvider) session.getProvider(DatastoreProvider.class)).userLocalStorage().toString());
 			if (((UserLookupProvider)((LegacyDatastoreProvider) session.getProvider(DatastoreProvider.class)).userLocalStorage()).getUserByUsername(realm, search) == null) {
-				UserModel user = getUserByUsername(scim.getUserName(scimuser), realm);
+				UserModel user = getUserByUsername(realm, scim.getUserName(scimuser));
 				users.add(user);
 			} else {
 				logger.info("User exists!");
