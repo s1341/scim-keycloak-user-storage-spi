@@ -94,6 +94,7 @@ ImportedUserValidation
 
 	@Override
 	public UserModel getUserByUsername(RealmModel realm, String username) {
+        logger.info("HERE1");
 		UserModel user = ((LegacyDatastoreProvider) session.getProvider(DatastoreProvider.class)).userLocalStorage().getUserByUsername(realm,  username);
 		if (user != null) {
 			logger.info("User already exists in keycloak");
