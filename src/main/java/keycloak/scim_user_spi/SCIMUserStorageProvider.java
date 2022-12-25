@@ -254,7 +254,7 @@ ImportedUserValidation
 		SCIMUser scimuser = scim.getUserByUsername(search);
 		if (scimuser.getTotalResults() > 0) {
 			logger.info("User found by username!");
-            logger.info("localUserStorage: {0}", ((LegacyDatastoreProvider) session.getProvider(DatastoreProvider.class)).userLocalStorage().toString());
+            logger.infov("localUserStorage: {0}", ((LegacyDatastoreProvider) session.getProvider(DatastoreProvider.class)).userLocalStorage().toString());
 			if (((LegacyDatastoreProvider) session.getProvider(DatastoreProvider.class)).userLocalStorage().getUserByUsername(realm, search) == null) {
 				UserModel user = getUserByUsername(scim.getUserName(scimuser), realm);
 				users.add(user);
